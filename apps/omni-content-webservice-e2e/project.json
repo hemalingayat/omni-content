@@ -1,0 +1,17 @@
+{
+  "name": "omni-content-webservice-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "implicitDependencies": ["omni-content-webservice"],
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "options": {
+        "jestConfig": "apps/omni-content-webservice-e2e/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["omni-content-webservice:build"]
+    }
+  }
+}

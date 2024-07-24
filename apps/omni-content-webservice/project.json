@@ -1,0 +1,24 @@
+{
+  "name": "omni-content-webservice",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/omni-content-webservice/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "omni-content-webservice:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "omni-content-webservice:build:development"
+        },
+        "production": {
+          "buildTarget": "omni-content-webservice:build:production"
+        }
+      }
+    }
+  }
+}
